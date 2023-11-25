@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "461853612383",
+    "project_id": "ecomrce-b145c",
+    "storage_bucket": "ecomrce-b145c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461853612383:android:67ca8e2b6a1a60e1d53eea",
+        "android_client_info": {
+          "package_name": "com.zosrecomrce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461853612383-3fdl70p67nakuvk54pskiccoddbd0pkc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.zosrecomrce",
+            "certificate_hash": "1686df4c7e352b80b0fb47d05d131d625c9c6580"
+          }
+        },
+        {
+          "client_id": "461853612383-591sbdp1lkrs3citvhq21eeciecs8gp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUq37xZCDtq7Byv-Ez5_iR40g5q9wBDac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461853612383-591sbdp1lkrs3citvhq21eeciecs8gp8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "461853612383-ab8rjbvtadn0m0qugs4hfn9p4s4ohk3h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.zosrtest.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
