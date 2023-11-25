@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:zosr/core/constant/colors.dart';
 import 'package:zosr/core/localizaton/localization_controllaer.dart';
 import 'package:zosr/core/shared/text_style.dart';
