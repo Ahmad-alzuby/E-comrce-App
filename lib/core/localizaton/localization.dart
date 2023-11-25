@@ -6,10 +6,10 @@ class MyLocal extends Translations {
         'ar': {
           //On Boardaing
           'welcome': 'مرحبأ',
-          'title1': 'اختر منتجاّ',
-          'title2': ' العديد من المنتجات',
-          'title3': 'ادخل طلبك',
-          'title4': 'توصيل سريع',
+          'title1': ' العديد من المنتجات',
+          'title2': ' اختر منتجك',
+          'title3': " توصيل سريع وأمن",
+          'title4': "عمليه شراء أمنه",
           'body1':
               'لدينا 100 ألف منتج اختار منتجك  \nمن متجر التجارة الإلكترونية \n الخاص بنا',
           'body2':
@@ -17,7 +17,7 @@ class MyLocal extends Translations {
           'body3':
               'تسليم موثوق وسريع. نحن\nنقوم بتسليم منتجك بأسرع\nطريقة ممكنة.',
           'body4':
-              'تسليم موثوق وسريع. نحن\nنقوم بتسليم منتجك بأسرع\nطريقة ممكنة.',
+              'تم استدخدام افضل أدوات ألامان\n.لضمان عمليه الشراء\n لكلا الطرفين',
           //btn
           'btn': 'متابعه',
           'skip': 'تخطي',
@@ -82,7 +82,7 @@ class MyLocal extends Translations {
           'body3':
               'Reliable And Fast Delivery. We\nDeliver your product the fastest\nway possible.',
           'body4':
-              "Best Tracker has been Used For\nTrack your order. You'll know where\nyour product is at the moment",
+              "We use the best safety tool \nto guarante your purchase\n for both parties",
           'btn': 'contenio',
           'skip': 'skip',
           'Welcome_Back': 'Welcome Back',

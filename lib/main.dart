@@ -1,10 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 
 import 'package:hive_flutter/adapters.dart';
-import 'package:zosr/core/constant/payment_api_keys.dart';
 import 'package:zosr/core/constant/routersName.dart';
 import 'package:zosr/core/localizaton/localization.dart';
 import 'package:zosr/core/localizaton/localization_controllaer.dart';
@@ -14,7 +12,6 @@ import 'package:zosr/routes.dart';
 import 'package:zosr/servers/serviers.dart';
 
 void main() async {
-  Stripe.publishableKey = PaymentApiKeys.puplishKey;
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 

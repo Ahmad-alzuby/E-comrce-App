@@ -37,7 +37,7 @@ class LangFlagAndName extends StatelessWidget {
           decoration: BoxDecoration(boxShadow: [
             myServices.grounValueLocal == name
                 ? BoxShadow(
-                    color: ColorApp.primary,
+                    color: ColorApp.cardColor,
                     spreadRadius: 1,
                     blurRadius: 1,
                     offset: const Offset(0, 0),

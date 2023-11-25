@@ -64,7 +64,6 @@ dependencies:
   shimmer: ^3.0.0
   smooth_page_indicator: ^1.1.0
   stripe: ^4.11.0
-  stripe_payment: ^1.1.4
   svg_flutter: ^0.0.1
 
 dev_dependencies:
