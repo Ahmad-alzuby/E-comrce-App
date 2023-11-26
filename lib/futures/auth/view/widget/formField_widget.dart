@@ -45,11 +45,11 @@ class _TextFormFiledWidgetState extends State<TextFormFiledWidget> {
             fontSize: 14,
           ),
           floatingLabelBehavior: FloatingLabelBehavior.always,
-          suffix: widget.icondata != null && widget.onpress != null
+          suffixIcon: widget.onpress != null
               ? widget.onpress != null
                   ? GestureDetector(
                       onTap: () => widget.onpress!(),
-                      child: const Icon(Icons.lock_outline))
+                      child:widget.icondata)
                   : widget.icondata
               : const SizedBox(),
           contentPadding:

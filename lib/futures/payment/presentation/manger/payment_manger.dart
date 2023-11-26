@@ -33,27 +33,44 @@ class PaymentManager extends GetxController {
     }
   }
 
-  num calcTotalPrice() {
+  num calcTotalPrice({required  List<ProdectModel> Prodects}) {
     num total = 0.0;
-    for (var element in Hive.box<ProdectModel>(kfavoriteBox).values) {
-      total +=( element.price! - element.discountPercentage!) * Hive.box(kNumOfprodect).get(element.id) ;
+    for (var element in Prodects) {
+    if ( Hive.box(kNumOfprodect).get(element.id) != null) {
+
+         total += (element.price! *        Hive.box(kNumOfprodect).get(element.id)- element.discountPercentage! *  Hive.box(kNumOfprodect).get(element.id));
+    }else {
+      total = element.price! -totoalDisount(Prodects: Prodects);
+    }
+      
     }
     return total;
   }
 
-  num originalPrice() {
+  num originalPrice({required  List<ProdectModel> Prodects}) {
     num Total = 0.0;
-    for (var element in Hive.box<ProdectModel>(kfavoriteBox).values  ) {
-    
-      Total += element.price! *Hive.box(kNumOfprodect).get(element.id)   ;
+    for (var element in Prodects  ) {
+    if ( Hive.box(kNumOfprodect).get(element.id) != null) {
+      Total += element.price! *                                    Hive.box(kNumOfprodect).get(element.id);
+
+      
+    }else{
+      Total += element.price!  ;
+
+    }
     }
     return Total;
   }
 
-  num totoalDisount() {
+  num totoalDisount({required  List<ProdectModel> Prodects}) {
     num Total = 0.0;
-    for (var element in Hive.box<ProdectModel>(kfavoriteBox).values) {
-      Total += element.discountPercentage! * Hive.box(kNumOfprodect).get(element.id) ;
+    for (var element in Prodects) {
+    if ( Hive.box(kNumOfprodect).get(element.id) != null) {
+      Total += element.discountPercentage! *         Hive.box(kNumOfprodect).get(element.id);}
+      else{
+        
+      Total += element.discountPercentage!;
+      }
     }
     return Total;
   }

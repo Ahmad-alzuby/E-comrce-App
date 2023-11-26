@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zosr/core/shared/text_style.dart';
 import 'package:zosr/futures/home/presentation/manger/homeControolar.dart';
-import 'package:zosr/futures/home/presentation/screen/favorite_Screen.dart';
+import 'package:zosr/futures/favorite/presentation/view/favorite_Screen.dart';
 import 'package:zosr/servers/serviers.dart';
 
 // ignore: must_be_immutable

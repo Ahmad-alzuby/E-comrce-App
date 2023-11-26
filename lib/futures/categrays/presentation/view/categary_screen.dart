@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:zosr/core/constant/apiRoute.dart';
 
 import 'package:zosr/futures/home/data/dataSource/remoteDataSource.dart';
-import 'package:zosr/futures/home/presentation/manger/categrayControllar.dart';
+import 'package:zosr/futures/categrays/presentation/manger/categrayControllar.dart';
 import 'package:zosr/futures/home/presentation/manger/homeControolar.dart';
-import 'package:zosr/futures/home/presentation/screen/categray_selected_screen.dart';
-import 'package:zosr/futures/home/presentation/widget/catgrayItem.dart';
+import 'package:zosr/futures/categrays/presentation/view/categray_selected_screen.dart';
+import 'package:zosr/futures/categrays/presentation/widget/catgrayItem.dart';
 
 import 'package:zosr/futures/home/presentation/widget/skelton_widget.dart';
 import 'package:shimmer/shimmer.dart';

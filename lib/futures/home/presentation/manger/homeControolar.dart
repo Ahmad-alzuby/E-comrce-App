@@ -6,17 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:zosr/futures/auth/view/manger/login_withe_google.dart';
-import 'package:zosr/futures/home/presentation/screen/AccountSetting.dart';
-import 'package:zosr/futures/home/presentation/screen/favorite_Screen.dart';
-import 'package:zosr/futures/home/presentation/screen/categary_screen.dart';
-import 'package:zosr/futures/home/presentation/screen/search_screen.dart';
+import 'package:zosr/futures/account/presentation/view/AccountSetting.dart';
+import 'package:zosr/futures/favorite/presentation/view/favorite_Screen.dart';
+import 'package:zosr/futures/categrays/presentation/view/categary_screen.dart';
+import 'package:zosr/futures/search/presentation/view/search_screen.dart';
 import 'package:zosr/futures/home/presentation/widget/home_body.dart';
 import 'package:zosr/servers/serviers.dart';
 
 class HomeControolar extends GetxController {
   String CategrayName;
   RxInt? currenPageNumber = 0.obs;
-
+Rx<int> ProdectNumber = 20.obs;
   List<Widget> pages = [
     const HomeBody(),
     // ignore: missing_required_param
@@ -44,7 +44,10 @@ class HomeControolar extends GetxController {
     MYServices.sharedPreferences.setString('image', imagePath.value);
     update();
   }
-
+updateNumber() {
+   ProdectNumber.value +=5;
+  update();
+}
   uplodImageFireStorge(
     ImageSource imageSource,
   ) async {

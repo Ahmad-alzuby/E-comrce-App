@@ -6,6 +6,7 @@ import 'package:zosr/futures/payment/presentation/widget/ThankYouCard.dart';
 import 'package:zosr/futures/payment/presentation/widget/appBar.dart';
 import 'package:zosr/futures/payment/presentation/widget/chekItem.dart';
 import 'package:zosr/futures/payment/presentation/widget/dashLine.dart';
+import 'package:zosr/futures/search/presentation/widget/search_app_bar_widget.dart';
 
 class SuccessPayScreeen extends StatelessWidget {
    const SuccessPayScreeen({super.key});
@@ -22,11 +23,17 @@ class SuccessPayScreeen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            appbar(
-                title: "",
-                function: () {
+            AppBar(
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              leading: IconButton(onPressed: (){
+           
                   Get.toNamed(AppRouter.homeScreen);
-                }),
+                
+              },icon: const Icon(Icons.arrow_back)),
+                title: const Text(""),
+                actions: const [],
+             ),
             Expanded(
               child: Transform.translate(
                 offset: const Offset(0, -16),

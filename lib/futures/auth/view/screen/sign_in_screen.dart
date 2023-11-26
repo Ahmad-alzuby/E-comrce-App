@@ -10,7 +10,7 @@ import 'package:zosr/core/function/validInput.dart';
 import 'package:zosr/core/shared/text_style.dart';
 import 'package:zosr/futures/auth/view/manger/loginContrrolar.dart';
 import 'package:zosr/futures/auth/view/manger/login_withe_google.dart';
-import 'package:zosr/futures/auth/view/widget/custom_btn.dart';
+import 'package:zosr/futures/auth/view/widget/custom_BTN_withe_loading.dart';
 import 'package:zosr/futures/auth/view/widget/formField_widget.dart';
 import 'package:zosr/futures/auth/view/widget/logoAuth.dart';
 import 'package:zosr/futures/auth/view/widget/sign_up_app_bar_widget.dart';
@@ -24,14 +24,14 @@ class LoginScreen extends StatelessWidget {
     TextEditingController passwordcontroller = TextEditingController();
     GoogleAutheraizationControllar googleAutheControllar =
         Get.put(GoogleAutheraizationControllar());
-    LoginControllar controller = Get.put(LoginControllar());
+    LoginControllar loginControllar = Get.put(LoginControllar());
     return WillPopScope(
       onWillPop: alerExitApp,
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 40),
           child: Form(
-            key: controller.formState,
+            key: loginControllar.formState,
             child: ListView(
               physics: const AlwaysScrollableScrollPhysics(
                   parent: BouncingScrollPhysics()),
@@ -77,15 +77,14 @@ class LoginScreen extends StatelessWidget {
                   builder: (controller) => TextFormFiledWidget(
                       onpress: () async {
                         await controller.showPassword();
-                        await controller.changeIcon();
                       },
-                      obscureText: controller.isShowPassowrd!,
+                      obscureText: controller.isShowPassowrd,
                       validator: (p0) {
                         return validinput(
                             max: 40, min: 8, tyype: 'password', val: p0 ?? '');
                       },
                       hintText: 'Enter Your PassWord',
-                      icondata: controller.iconsPassword,
+                      icondata: controller.iconsPassword.value,
                       label: 'password'.tr,
                       textEditingController: passwordcontroller),
                 ),
@@ -103,13 +102,17 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                CoustemBtnWidget(
-                  function: () async {
-                    return await controller.validator(AppRouter.homeScreen,
-                        emailAddress: emailcontroller.text,
-                        password: passwordcontroller.text);
-                  },
-                  text: 'login'.tr,
+                GetBuilder<LoginControllar>(
+                  builder: (controller) => 
+                   CoustemBtnWitheLoading(
+                isLoading: controller.isLoading.value,
+                    function: () async {
+                      return await controller.validator(AppRouter.homeScreen,
+                          emailAddress: emailcontroller.text,
+                          password: passwordcontroller.text);
+                    },
+                    content: 'login'.tr,
+                  ),
                 ),
                 const SizedBox(
                   height: 10,

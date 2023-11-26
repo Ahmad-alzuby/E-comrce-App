@@ -24,7 +24,7 @@ class CoustemBtnWitheLoading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: ColorApp.graey,
+          color: ColorApp.blue,
           boxShadow: const [
             BoxShadow(
                 color: Color.fromARGB(73, 0, 0, 0),
@@ -42,7 +42,7 @@ class CoustemBtnWitheLoading extends StatelessWidget {
           child: ElevatedButton(
               style: ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(
-                      backgroundColor ?? ColorApp.primary)),
+                      backgroundColor ?? ColorApp.blue)),
               onPressed: () {
                 if (function != null) {
                   // ignore: void_checks

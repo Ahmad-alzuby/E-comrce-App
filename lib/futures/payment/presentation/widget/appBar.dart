@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:zosr/core/shared/text_style.dart';
 
-AppBar appbar({required String title, required Function function}) {
+AppBar appbar({required String title, required Function function, required Color backgroundColor}) {
   return AppBar(
     backgroundColor: Colors.transparent,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),

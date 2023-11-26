@@ -3,7 +3,7 @@ import 'package:zosr/core/constant/colors.dart';
 import 'package:zosr/core/localizaton/localization_controllaer.dart';
 import 'package:zosr/core/shared/text_style.dart';
 import 'package:zosr/futures/home/data/models/prodect.dart';
-import 'package:zosr/futures/home/presentation/manger/categrayControllar.dart';
+import 'package:zosr/futures/categrays/presentation/manger/categrayControllar.dart';
 
 class CategrayList extends StatelessWidget {
   const CategrayList(

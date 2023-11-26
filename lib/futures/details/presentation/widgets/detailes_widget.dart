@@ -1,12 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hive/hive.dart';
+import 'package:zosr/core/constant/colors.dart';
 import 'package:zosr/core/constant/const.dart';
 import 'package:zosr/core/shared/text_style.dart';
 import 'package:zosr/futures/home/data/models/prodect.dart';
-import 'package:zosr/futures/home/presentation/manger/favoriteControlaer.dart';
-import 'package:zosr/futures/home/presentation/widget/rating_widget.dart';
+import 'package:zosr/futures/favorite/presentation/manger/favoriteControlaer.dart';
+import 'package:zosr/futures/details/presentation/widgets/rating_widget.dart';
 
 // ignore: must_be_immutable
 class DetailesProdect extends StatelessWidget {
@@ -101,7 +103,21 @@ class DetailesProdect extends StatelessWidget {
             height: 10,
           ),
 
-     Row(children: [ProdectRating(prodect: prodect,    ), Text("(${prodect.rating})")],)
+ 
+       Row(
+        children: [ Container(
+          padding: const EdgeInsets.all(5),
+          decoration: BoxDecoration(
+          boxShadow:    const [BoxShadow(spreadRadius: 0.1 , blurRadius: 0.1 , offset: Offset(0.1, 0.1) ,  color: Color.fromARGB(26, 0, 0, 0))],
+borderRadius: BorderRadius.circular(16)
+          ),
+          child: Row(
+            children: [
+              Text("(${prodect.rating})" , style: AppStyleText.textStyle_16,)
+              ,const Icon(Icons.star_rounded , color: Colors.yellow, size: 24, )
+            ],
+          )),],),
+     
  
         ],
       ),

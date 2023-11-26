@@ -4,27 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:zosr/core/constant/const.dart';
+import 'package:zosr/core/constant/routersName.dart';
 import 'package:zosr/futures/home/data/models/prodect.dart';
 import 'package:zosr/servers/serviers.dart';
 
 class FavoriteControllar extends GetxController {
+ 
   MYServices myServices = Get.find();
   Rx<Color> color = Colors.blue.obs;
   RxInt countProdect = 1.obs;
   addProdect(
     ProdectModel prodect,
   ) async {
-    await Hive.box(kNumOfprodect).put(prodect.id, 1);
-
-    if (Hive.box<ProdectModel>(kfavoriteBox).containsKey(prodect.id)) {
-      try {
+bool  isFav = await chechIfFavoriteAlready(prodect);
+update();
+if (isFav == true) {
+ 
+    try {
         color = Colors.blue.obs;
-
         await Hive.box<ProdectModel>(kfavoriteBox).delete(prodect.id);
         update();
+        return true;
       } catch (e) {}
-    } else {
-      try {
+     
+} else if(isFav == false){
+
+    try {
         await Hive.box<ProdectModel>(kfavoriteBox).put(prodect.id, prodect);
 
         if (Hive.box<ProdectModel>(kfavoriteBox).values.contains(prodect)) {
@@ -33,10 +38,23 @@ class FavoriteControllar extends GetxController {
           color.value = Colors.blue;
         }
         update();
+        
       } catch (e) {
         Get.defaultDialog(content: const Text(''), title: e.toString());
       }
-    }
+}
+  }
+ Future<bool> chechIfFavoriteAlready(
+    ProdectModel prodect,
+  )async {
+await Hive.box(kNumOfprodect).put(prodect.id, 1);
+
+    if (Hive.box<ProdectModel>(kfavoriteBox).containsKey(prodect.id)) {
+    return true;
+    } else {
+       
+  
+    return false;}
   }
 
   deletProdct(ProdectModel prodect, int index) async {
@@ -62,11 +80,19 @@ class FavoriteControllar extends GetxController {
     if (Hive.box(kNumOfprodect).get(prodec.id) == 1) {
       Hive.box<ProdectModel>(kfavoriteBox).delete(prodec.id);
       update();
+      Get.to(AppRouter.homeScreen);
+      
       return;
     }
     await Hive.box(kNumOfprodect)
         .put(prodec.id, Hive.box(kNumOfprodect).get(prodec.id) - 1);
 
     update();
+  }
+  @override
+  void dispose() {
+    dispose();
+    // TODO: implement dispose
+    super.dispose();
   }
 }

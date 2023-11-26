@@ -50,9 +50,18 @@ class GoogleAutheraizationControllar extends GetxController {
     await MYServices.sharedPreferences.setString('image', '');
     try {
       await MYServices.sharedPreferences.setBool("Log", false);
+      if (FirebaseAuth.instance.currentUser?.email == null) {
+        
       await GoogleSignIn().disconnect();
-
       Get.offAndToNamed(AppRouter.login);
+
+      return;
+      }else{
+      FirebaseAuth.instance.signOut();
+      Get.offAndToNamed(AppRouter.login);
+
+      }
+
     } catch (e) {
       Get.snackbar('error' , e.toString(),);
 

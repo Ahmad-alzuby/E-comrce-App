@@ -5,7 +5,7 @@ import 'package:zosr/core/constant/routersName.dart';
 import 'package:zosr/futures/auth/view/screen/sign_in_screen.dart';
 import 'package:zosr/futures/auth/view/screen/forgetPassword/forget_password_screen.dart';
 import 'package:zosr/futures/auth/view/screen/sign_up_screen.dart';
-import 'package:zosr/futures/home/presentation/screen/details_Screen.dart';
+import 'package:zosr/futures/details/presentation/view/details_Screen.dart';
 import 'package:zosr/futures/home/presentation/screen/home_screen.dart';
 import 'package:zosr/futures/language/view/screen/lang_screen.dart';
 import 'package:zosr/futures/splash/view/screen/onBordaing.dart';

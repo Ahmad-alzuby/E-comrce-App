@@ -29,6 +29,7 @@ class Api {
         baseUrl: 'https://dummyjson.com/',
       );
       dio = Dio(baseOptions);
+     
       List<dynamic> data = (await dio.get(CatgrayName)).data['products'];
 
       List<ProdectModel> d = data.map((value) {

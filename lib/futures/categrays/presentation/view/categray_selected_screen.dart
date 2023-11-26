@@ -6,10 +6,10 @@ import 'package:zosr/core/constant/apiRoute.dart';
 
 import 'package:zosr/core/localizaton/localization_controllaer.dart';
 import 'package:zosr/futures/home/data/dataSource/remoteDataSource.dart';
-import 'package:zosr/futures/home/presentation/manger/categrayControllar.dart';
+import 'package:zosr/futures/categrays/presentation/manger/categrayControllar.dart';
 
-import 'package:zosr/futures/home/presentation/screen/details_Screen.dart';
-import 'package:zosr/futures/home/presentation/widget/categray_list.dart';
+import 'package:zosr/futures/details/presentation/view/details_Screen.dart';
+import 'package:zosr/futures/categrays/presentation/widget/categray_list.dart';
 import 'package:zosr/futures/home/presentation/widget/item_widget.dart';
 import 'package:zosr/futures/home/presentation/widget/loading_homeBody.dart';
 

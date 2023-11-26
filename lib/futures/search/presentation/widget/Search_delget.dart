@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:zosr/futures/home/data/models/prodect.dart';
-import 'package:zosr/futures/home/presentation/screen/details_Screen.dart';
-import 'package:zosr/futures/home/presentation/screen/search_screen.dart';
+import 'package:zosr/futures/details/presentation/view/details_Screen.dart';
+import 'package:zosr/futures/search/presentation/view/search_screen.dart';
 import 'package:zosr/futures/home/presentation/widget/item_widget.dart';
 
 class serch_delget extends SearchDelegate {

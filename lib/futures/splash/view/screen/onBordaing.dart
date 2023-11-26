@@ -26,6 +26,8 @@ class OnBoardingScreen extends GetView<PageViewControllar> {
         Expanded(
           flex: 3,
           child: PageView.builder(
+            physics: const BouncingScrollPhysics(
+                                      parent: AlwaysScrollableScrollPhysics()),
             onPageChanged: (pageNumber) {
               pageViewControllar.onPageChange(currentPageNumber: pageNumber);
             },

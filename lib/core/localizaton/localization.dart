@@ -68,7 +68,8 @@ class MyLocal extends Translations {
           'groceries': "بقوليات",
           //
           'light mode': 'الوضع الفاتح',
-          'dark mode': 'الوضع الداكن'
+          'dark mode': 'الوضع الداكن',
+          'add to favorite' : "اضافه الى المفضله"
         },
         'en': {
           'title1': 'Chose Product',
@@ -137,6 +138,9 @@ class MyLocal extends Translations {
           'fragrances': "fragrances",
           'home-decoration': "home decoration",
           'groceries': "groceries",
+          //
+          'add to favorite'  :"Add to favorite"
+
         }
       };
 }
