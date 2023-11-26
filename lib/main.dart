@@ -14,7 +14,7 @@ import 'package:zosr/routes.dart';
 import 'package:zosr/servers/serviers.dart';
 
 void main() async {
-  Stripe.publishableKey = PaymentApiKeys.puplishKey;
+  Stripe.publishableKey = paymentApiKeys.puplishKey;
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
