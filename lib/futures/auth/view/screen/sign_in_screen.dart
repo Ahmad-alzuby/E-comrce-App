@@ -36,7 +36,7 @@ class LoginScreen extends StatelessWidget {
               physics: const AlwaysScrollableScrollPhysics(
                   parent: BouncingScrollPhysics()),
               children: [
-                const AuthAppBarWidget(),
+                  AuthAppBarWidget(text: "Sign In".tr),
                 const SizedBox(
                   height: 10,
                 ),

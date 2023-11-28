@@ -23,6 +23,9 @@ class MyLocal extends Translations {
           'skip': 'تخطي',
           //login
           'Welcome_Back': 'مرحبا مجدداّ',
+          // "sign_up_body"
+          "sign_up_body":
+          "قم بأنشاء حسابك الأن وأنضم لمتجر زوسر",
           "sign_in_body":
               'قم بتسجيل الدخول بواسطه البريد الاكتروني او حسابات التواصل الاجتماعي ',
           'Email': "البريد الالكتروني",
@@ -89,7 +92,9 @@ class MyLocal extends Translations {
           'Welcome_Back': 'Welcome Back',
           'pay' :'pay',
           "sign_in_body":
-              'Sign In With Your Email And Passowrd Or Continue With Social Medai',
+              'Sign In With Your Email And Passowrd Or Continue With Social Medai', 
+               "sign_up_body":
+              'Create Your Account Now And Join To Zosr Shoop',
           'Email': 'Email',
           'Enter Your Email': 'Enter Your Email',
           'Enter Your PassWord': 'Enter Your PassWord',

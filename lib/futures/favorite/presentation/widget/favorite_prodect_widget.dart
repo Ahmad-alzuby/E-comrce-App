@@ -10,14 +10,14 @@ import 'package:zosr/futures/home/presentation/widget/item_widget.dart';
 
 // ignore: must_be_immutable
 class FavoriteItemWidget extends StatelessWidget {
+  FavoriteControllar controllar;
   int index;
   FavoriteItemWidget({
+    required this.controllar,
     required this.index,
     super.key,
-    required this.controllar,
   });
 
-  final FavoriteControllar controllar;
 
   @override
   Widget build(BuildContext context) {
@@ -34,38 +34,39 @@ class FavoriteItemWidget extends StatelessWidget {
                   index: index,
                   prodects: Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!,
                   backgroundColor: const Color.fromARGB(255, 121, 121, 121)),
-              IconButton(
-                onPressed: () {
-                  controllar.deletProdct(
-                      Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!,
-                      index);
-                },
-                icon: const Icon(
-                  Icons.favorite,
-                  color: Color.fromARGB(255, 174, 51, 43),
+              GetBuilder<FavoriteControllar>(
+                builder: (controller) => 
+                 IconButton(
+                  onPressed: () {
+                    controller.deletProdct(
+                        Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!,
+                        index);
+                  },
+                  icon: const Icon(
+                    Icons.favorite,
+                    color: Color.fromARGB(255, 174, 51, 43),
+                  ),
                 ),
               )
             ]),
-            GetBuilder<FavoriteControllar>(
-              builder: (controller) => Row(
+         Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
                       onPressed: () async {
-                        await controller.addMoreIntForProdect(
+                        await controllar.addMoreIntForProdect(
                             Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!);
                       },
                       icon: const Icon(
                         FontAwesomeIcons.plus,
                         size: 16,
                       )),
-                  GetBuilder<FavoriteControllar>(
-                      builder: (controller) => Text(
-                          "${Hive.box(kNumOfprodect).get(Hive.box<ProdectModel>(kfavoriteBox).getAt(index)?.id) ?? 0}")),
+                  Text(
+                      "${Hive.box(kNumOfprodect).get(Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!.id)}"),
                   IconButton(
                       onPressed: () async {
-                        await controller.MinceOneForProdect(
+                        await controllar.MinceOneForProdect(
                             Hive.box<ProdectModel>(kfavoriteBox).getAt(index)!);
                       },
                       icon: const Icon(
@@ -73,7 +74,7 @@ class FavoriteItemWidget extends StatelessWidget {
                         size: 16,
                       )),
                 ],
-              ),
+              
             ),
           ],
         ));

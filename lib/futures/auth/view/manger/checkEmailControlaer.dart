@@ -18,7 +18,7 @@ class SendEmailVerify extends GetxController {
   cekVerfiy() async {
     if (userCredential!.user!.emailVerified == false) {
       return Get.defaultDialog(
-          title: "Note!", content: const Text("The Email Not Vefied Yet!"));
+          title: "Note!", content: const Text("The Email Not Verified Yet! \n Check Your Email Massges"));
     } else if (userCredential!.user!.emailVerified == true) {
       return Get.offAndToNamed(AppRouter.homeScreen);
     }

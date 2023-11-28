@@ -67,7 +67,7 @@ class serch_delget extends SearchDelegate {
       itemBuilder: (BuildContext context, int index) {
         return Container(
           margin: EdgeInsets.only(bottom: w / 20),
-          height: w / 4,
+          height: w / 6,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(20)),
             boxShadow: [

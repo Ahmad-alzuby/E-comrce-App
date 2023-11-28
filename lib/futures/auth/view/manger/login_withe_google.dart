@@ -47,25 +47,22 @@ class GoogleAutheraizationControllar extends GetxController {
   }
 
   Future logout() async {
+
+
     await MYServices.sharedPreferences.setString('image', '');
     try {
+          await MYServices.sharedPreferences.setString('image', '');
+
       await MYServices.sharedPreferences.setBool("Log", false);
-      if (FirebaseAuth.instance.currentUser?.email == null) {
-        
-      await GoogleSignIn().disconnect();
-      Get.offAndToNamed(AppRouter.login);
 
-      return;
-      }else{
-      FirebaseAuth.instance.signOut();
-      Get.offAndToNamed(AppRouter.login);
-
-      }
+ await GoogleSignIn().signOut();
 
     } catch (e) {
       Get.snackbar('error' , e.toString(),);
+      FirebaseAuth.instance.signOut();
 
     }
+ 
   }
 
   Future updateName(String newName) async {

@@ -3,10 +3,8 @@ import 'package:get/get.dart';
 import 'package:zosr/core/constant/routersName.dart';
 
 import 'package:zosr/futures/payment/presentation/widget/ThankYouCard.dart';
-import 'package:zosr/futures/payment/presentation/widget/appBar.dart';
 import 'package:zosr/futures/payment/presentation/widget/chekItem.dart';
 import 'package:zosr/futures/payment/presentation/widget/dashLine.dart';
-import 'package:zosr/futures/search/presentation/widget/search_app_bar_widget.dart';
 
 class SuccessPayScreeen extends StatelessWidget {
    const SuccessPayScreeen({super.key});

@@ -3,10 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-import 'package:hive/hive.dart';
 import 'package:zosr/core/constant/apiRoute.dart';
 import 'package:zosr/core/constant/colors.dart';
-import 'package:zosr/core/constant/const.dart';
 import 'package:zosr/core/shared/text_style.dart';
 import 'package:zosr/futures/home/data/dataSource/remoteDataSource.dart';
 import 'package:zosr/futures/home/data/models/prodect.dart';
@@ -112,6 +110,7 @@ class _DetaliesViewState extends State<DetaliesView> {
                   // ignore: missing_required_param
                   GetBuilder<FavoriteControllar>(
                     builder: (controller) => 
+                  // ignore: missing_required_param
                   CoustemButtonWidget(
                   
                          text:      'pay'.tr,

@@ -1,6 +1,5 @@
 // ignore_for_file: file_names
 
-import 'package:zosr/futures/home/presentation/manger/homeControolar.dart';
 
 class ApiEndBoint {
   static String baseUrl = 'products/category';

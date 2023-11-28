@@ -36,7 +36,7 @@ class SignUpScreen extends StatelessWidget {
                 physics: const AlwaysScrollableScrollPhysics(
                     parent: BouncingScrollPhysics()),
                 children: [
-                  const AuthAppBarWidget(),
+                    AuthAppBarWidget(text: "Sign Up".tr),
                   const SizedBox(
                     height: 20,
                   ),
@@ -47,6 +47,8 @@ class SignUpScreen extends StatelessWidget {
                     style: AppStyleText.textStyle_38
                         .copyWith(fontWeight: FontWeight.w500, fontSize: 36),
                   ),
+                  Text("sign_up_body".tr  ,style: AppStyleText.textStyle_16,  textAlign: TextAlign.center,),
+
                   const SizedBox(
                     height: 20,
                   ),
@@ -93,7 +95,7 @@ class SignUpScreen extends StatelessWidget {
                       hintText: 'Enter Your PassWord',
                       icondata: controller.iconsPassword.value,
                       label: 'password'.tr,
-                      textEditingController: passController),
+                      textEditingController: confermpass),
                   const SizedBox(
                     height: 10,
                   ),

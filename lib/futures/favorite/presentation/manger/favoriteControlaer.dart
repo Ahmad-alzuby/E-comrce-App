@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:zosr/core/constant/const.dart';
-import 'package:zosr/core/constant/routersName.dart';
 import 'package:zosr/futures/home/data/models/prodect.dart';
 import 'package:zosr/servers/serviers.dart';
 
@@ -78,11 +77,8 @@ await Hive.box(kNumOfprodect).put(prodect.id, 1);
 
   MinceOneForProdect(ProdectModel prodec) async {
     if (Hive.box(kNumOfprodect).get(prodec.id) == 1) {
-      Hive.box<ProdectModel>(kfavoriteBox).delete(prodec.id);
-      update();
-      Get.to(AppRouter.homeScreen);
-      
-      return;
+      Hive.box<ProdectModel>(kfavoriteBox).delete(prodec.id); 
+      update();     
     }
     await Hive.box(kNumOfprodect)
         .put(prodec.id, Hive.box(kNumOfprodect).get(prodec.id) - 1);
@@ -91,8 +87,7 @@ await Hive.box(kNumOfprodect).put(prodect.id, 1);
   }
   @override
   void dispose() {
-    dispose();
-    // TODO: implement dispose
+dispose();
     super.dispose();
   }
 }

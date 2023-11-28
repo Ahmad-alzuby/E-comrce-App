@@ -10,7 +10,6 @@ import 'package:zosr/futures/home/presentation/widget/loading_homeBody.dart';
 
 import 'package:zosr/core/constant/colors.dart';
 
-import 'package:zosr/futures/home/data/dataSource/remoteDataSource.dart';
 import 'package:zosr/futures/home/presentation/manger/homeControolar.dart';
 import 'package:zosr/futures/details/presentation/view/details_Screen.dart';
 import 'package:zosr/futures/home/presentation/widget/appBar.dart';
@@ -26,7 +25,7 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-  ScrollController GridVIewController = ScrollController();
+  ScrollController gridVIewController = ScrollController();
   @override
   void initState() {
     super.initState();
@@ -45,29 +44,25 @@ class _HomeBodyState extends State<HomeBody> {
           AppBarCoustem(myServices: myServices, homeControolar: homeControolar),
           GetBuilder<HomeControolar>(
             builder: (controller) => FutureBuilder(
-                future: Api().GetData(
-                    ApiEndBoint.all),
+                future: Api().GetData(ApiEndBoint.all),
                 builder: (context, snapshot) {
-                  
                   if (snapshot.hasData) {
-                    GridVIewController.addListener(() {
-                      
-                      if (GridVIewController.position.maxScrollExtent ==
-                          GridVIewController.offset) {
+                    gridVIewController.addListener(() {
+                      if (gridVIewController.position.maxScrollExtent ==
+                          gridVIewController.offset) {
                         homeControolar.updateNumber();
                       }
                     });
                     return Expanded(
                         child: AnimationLimiter(
                             child: GridView.count(
-                                controller: GridVIewController,
+                                controller: gridVIewController,
                                 physics: const BouncingScrollPhysics(
                                     parent: AlwaysScrollableScrollPhysics()),
                                 padding: EdgeInsets.all(w / 60),
                                 crossAxisCount: 2,
                                 children: List.generate(snapshot.data!.length,
                                     (int index) {
-                                     
                                   return AnimationConfiguration.staggeredGrid(
                                     position: index,
                                     duration: const Duration(milliseconds: 500),

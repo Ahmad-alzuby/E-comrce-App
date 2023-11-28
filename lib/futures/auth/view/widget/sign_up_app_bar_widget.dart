@@ -1,10 +1,12 @@
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:zosr/core/shared/text_style.dart';
 
+// ignore: must_be_immutable
 class AuthAppBarWidget extends StatelessWidget {
-  const AuthAppBarWidget({
+  String text;
+    AuthAppBarWidget({
+ required   this.text,
     super.key,
   });
 
@@ -16,7 +18,7 @@ class AuthAppBarWidget extends StatelessWidget {
       centerTitle: true,
       elevation: 0.0,
     backgroundColor: Colors.transparent,
-      title: Text('signUp'.tr,
+      title: Text(text,
           style: AppStyleText.textStyle_22.copyWith( )),
     );
   }
