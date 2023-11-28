@@ -49,53 +49,8 @@ class ThankYouCard extends StatelessWidget {
               height: 60,
               thickness: 2,
             ),
-            OrderInfoItem(
-                textStyle: AppStyleText.textStyle_25,
-                infoName: 'Total',
-                value: 1323),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: ColorApp.white,
-                  borderRadius: BorderRadius.circular(16)),
-              height: 70,
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16.0),
-                    child: SvgPicture.asset('assets/images/card.svg'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 25,
-                          child: Text(
-                            textAlign: TextAlign.start,
-                            "Credit Card          ",
-                            style: AppStyleText.textStyle_18.copyWith(color: Colors.black)
-                                .copyWith(fontWeight: FontWeight.w400),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 25,
-                          child: Text(
-                            "Mastercard **78",
-                            style: AppStyleText.textStyle_18.copyWith(color: Colors.black)
-                                .copyWith(fontWeight: FontWeight.w400),
-                          ),
-                        )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            ),
-            const Spacer(),
+       
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
